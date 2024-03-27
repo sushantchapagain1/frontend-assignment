@@ -1,4 +1,4 @@
-import BackgroundImageWrapper from '@/components/BackgroundWrapper';
+import BackgroundImageWrapper from '@/components/BackgroundImageWrapper';
 
 function page() {
   return (
