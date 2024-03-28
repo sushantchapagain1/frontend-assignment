@@ -10,6 +10,7 @@ function BackgroundImageWrapper({ source, children }: Props) {
       style={{
         backgroundImage: `url(${source})`,
         backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
       }}
     >
