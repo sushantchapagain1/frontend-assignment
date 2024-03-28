@@ -1,0 +1,39 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Chinese Money",
+      "price": 220,
+      "source": "/static/plants/plant-1.png",
+      "alt": "Chinese money plant."
+    },
+    {
+      "id": 2,
+      "name": "Montera Deliciosa",
+      "price": 244,
+      "source": "/static/plants/plant-2.png",
+      "alt": "Montera deliciosa plant."
+    },
+    {
+      "id": 3,
+      "name": "Hedera Helix",
+      "price": 220,
+      "source": "/static/plants/plant-1.png",
+      "alt": "Hedera helix plant."
+    },
+    {
+      "id": 4,
+      "name": "Pulsatillia patens",
+      "price": 299,
+      "source": "/static/plants/plant-3.png",
+      "alt": "Pulsatillia patens plant."
+    },
+    {
+      "id": 5,
+      "name": "Cactus",
+      "price": 210,
+      "source": "/static/plants/plant-2.png",
+      "alt": "Cactus plant."
+    }
+  ]
+}

@@ -1,13 +1,14 @@
 import Image from 'next/image';
 
-type Props = {
+export type TProduct = {
+  id?: string;
   source: string;
   alt?: string;
   name: string;
   price: number;
 };
 
-function ProductCard({ source, name, price, alt }: Props) {
+function ProductCard({ source, name, price, alt }: TProduct) {
   return (
     <div className="flex flex-col items-center text-white">
       <Image
