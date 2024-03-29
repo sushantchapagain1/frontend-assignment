@@ -1,16 +1,21 @@
 import Image from 'next/image';
 import { PlusIcon } from './icons';
+import { useCart } from '@/context/CartContext';
 
 export type TProduct = {
-  id?: string;
+  id: number;
   source: string;
-  alt?: string;
+  alt?: string | undefined;
   name: string;
   price: number;
   isActive: boolean;
 };
 
-function ProductCard({ source, name, price, alt, isActive }: TProduct) {
+function ProductCard({ source, name, price, alt, isActive, id }: TProduct) {
+  const { addToCart, checkCart, removeFromCart } = useCart();
+
+  const isInCart = checkCart(id);
+
   return (
     <div className="flex flex-col items-center text-white">
       <Image
@@ -30,7 +35,7 @@ function ProductCard({ source, name, price, alt, isActive }: TProduct) {
         </>
       )}
       {isActive && (
-        <div className="absolute -bottom-16 z-[999] flex w-fit items-center justify-between rounded-full bg-white/35 p-3 transition-all duration-300">
+        <div className="absolute -bottom-2 z-[999] flex w-fit items-center justify-between rounded-full bg-white/35 p-3 transition-all duration-300">
           <div className="flex w-full flex-col">
             <h3 className="text-lg font-medium">{name}</h3>
             <p className="text-xl font-bold">
@@ -38,9 +43,16 @@ function ProductCard({ source, name, price, alt, isActive }: TProduct) {
               {price}
             </p>
           </div>
-          <button className="flex w-full items-center gap-1 rounded-full bg-white p-3 text-gray-700">
-            <PlusIcon height={20} width={20} />
-            Add to cart
+          <button
+            className="flex w-full items-center gap-1 rounded-full bg-white p-3 text-gray-700"
+            onClick={
+              isInCart
+                ? () => removeFromCart(id)
+                : () => addToCart({ id, name, price, source, alt })
+            }
+          >
+            {!isInCart && <PlusIcon height={20} width={20} />}
+            {isInCart ? 'Remove from cart' : 'Add to cart'}
           </button>
         </div>
       )}
