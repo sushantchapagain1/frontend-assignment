@@ -3,12 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "concurrently \"json-server --watch db.json --port 8000\" \"next build\"",
-    "start": "concurrently \"json-server --watch db.json --port 8000\" \"next start\"",
-    "lint": "next lint",
-    "json-server": "json-server --watch db.json --port 8000",
-    "concurrently": "concurrently \"json-server --watch db.json --port 8000\" \"next dev\""
+    "dev": "json-server --watch db.json --port 8000 & next dev",
+    "build": "json-server --watch db.json --port 8000 & next build",
+    "start": "json-server --watch db.json --port 8000 & next start",
+    "lint": "next lint"
   },
   "dependencies": {
     "clsx": "^2.1.0",
