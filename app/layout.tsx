@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 
-import SideNav from '@/components/Sidenav';
+import SideNav from '@/components/SideNav';
 import UrlBar from '@/components/UrlBar';
 import BackgroundImageWrapper from '@/components/BackgroundImageWrapper';
 import CartProvider from '@/context/CartContext';
