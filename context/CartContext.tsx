@@ -24,7 +24,7 @@ const CartContext = createContext<CartContext | null>(null);
 function CartProvider({ children }: { children: React.ReactNode }) {
   const [cart, setCart] = useLocalStorage([], 'cart');
 
-  // Not handling quantity  so no need to store duplicate items.
+  // Not handling quantity so no need to store duplicate items.
   function checkCart(id: number) {
     return cart.some((item: TCart) => id === item.id);
   }
