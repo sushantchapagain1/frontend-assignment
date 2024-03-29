@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "json-server --watch db.json --port 8000 & next dev",
-    "build": "json-server --watch db.json --port 8000 --host https://frontend-assignment-kj9rwjlml-sushantchapagain1.vercel.app & next build",
+    "build": "json-server --watch db.json --port 8000 --host 0.0.0.0 & next build",
     "start": " next start",
     "lint": "next lint"
   },
