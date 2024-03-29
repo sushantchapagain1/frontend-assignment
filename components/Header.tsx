@@ -1,5 +1,5 @@
 import { HEADER_LINKS } from '@/constants';
-import { SearchIcon } from './icons';
+import SearchBar from './SearchBar';
 
 function Header() {
   return (
@@ -17,15 +17,7 @@ function Header() {
           );
         })}
       </div>
-      <div className="flex w-fit items-center rounded-full bg-white/40 px-3  py-2">
-        <input
-          placeholder="Search"
-          className="bg-transparent outline-none placeholder:text-sm"
-        />
-        <button>
-          <SearchIcon height={24} width={24} />
-        </button>
-      </div>
+      <SearchBar />
     </header>
   );
 }

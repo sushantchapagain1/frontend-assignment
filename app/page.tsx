@@ -1,14 +1,22 @@
 import MainWrapper from '@/components/MainWrapper';
-import ProductCard from '@/components/ProductCard';
 
-function page() {
+import ProductSlider from '@/components/Slider/ProductSlider';
+import { BACKEND_URL } from '@/constants';
+import { Suspense } from 'react';
+
+async function getProducts() {
+  const data = await fetch(`${BACKEND_URL}/products`, { method: 'GET' });
+  return data.json();
+}
+
+async function page() {
+  const products = await getProducts();
+
   return (
     <MainWrapper className="flex items-center justify-center">
-      <ProductCard
-        name="Chinese Money"
-        price={220}
-        source="/static/plants/plant-1.png"
-      />
+      <Suspense fallback="Loading..">
+        <ProductSlider products={products} />
+      </Suspense>
     </MainWrapper>
   );
 }

@@ -29,3 +29,6 @@ export const SIDE_NAV_LINKS = [
   { href: '/cart', icon: CartIcon },
   { href: '/list', icon: LockIcon },
 ] as const;
+
+export const BACKEND_URL =
+  process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8000';
