@@ -4,11 +4,9 @@ import MainWrapper from '@/components/MainWrapper';
 
 function page() {
   return (
-    <>
-      <MainWrapper>
-        <Cart />
-      </MainWrapper>
-    </>
+    <MainWrapper>
+      <Cart />
+    </MainWrapper>
   );
 }
 

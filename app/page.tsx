@@ -12,7 +12,15 @@ async function page() {
 
   return (
     <MainWrapper className="relative flex items-center justify-center">
-      <Suspense fallback={<Skeleton />}>
+      <Suspense
+        fallback={
+          <div className="flex gap-3">
+            <Skeleton />
+            <Skeleton />
+            <Skeleton />
+          </div>
+        }
+      >
         <ProductSlider products={products} />
       </Suspense>
     </MainWrapper>

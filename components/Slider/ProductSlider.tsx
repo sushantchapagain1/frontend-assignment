@@ -15,19 +15,23 @@ function ProductSlider({ products }: Props) {
   const [currentSlideNumber, setCurrentSlideNumber] = useState(0);
 
   const options: Settings = {
-    // autoplay: true,
-    // speed: 300,
     slidesToShow: 3,
     slidesToScroll: 1,
     centerMode: true,
     cssEase: 'linear',
     className: 'center',
     centerPadding: '3px',
-
     arrows: false,
     beforeChange: (_: number, nextSlide: number) =>
       setCurrentSlideNumber(nextSlide),
     responsive: [
+      {
+        breakpoint: 1061,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
       {
         breakpoint: 600,
         settings: {
@@ -39,7 +43,10 @@ function ProductSlider({ products }: Props) {
   };
 
   return (
-    <Slider options={options} className="w-full overflow-visible">
+    <Slider
+      options={options}
+      className="w-full overflow-visible py-3 lg:w-[900px]"
+    >
       {products.map((product, index) => {
         const isActive = Boolean(currentSlideNumber === index);
         return (
