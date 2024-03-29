@@ -1,17 +1,26 @@
 'use client';
-import 'swiper/css';
-import type { SwiperProps } from 'swiper/react';
+import Slider from 'react-slick';
 
-import { Swiper } from 'swiper/react';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
-function Slider({
+import type { Settings } from 'react-slick';
+import { cn } from '@/lib/utils';
+
+function Slide({
   children,
   options,
+  className,
 }: {
-  options: SwiperProps;
+  options: Settings;
   children: React.ReactNode;
+  className?: string;
 }) {
-  return <Swiper {...options}>{children}</Swiper>;
+  return (
+    <Slider {...options} className={cn(className)}>
+      {children}
+    </Slider>
+  );
 }
 
-export default Slider;
+export default Slide;

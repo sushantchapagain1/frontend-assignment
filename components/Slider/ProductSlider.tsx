@@ -1,7 +1,9 @@
 'use client';
-import { SwiperSlide, type SwiperProps } from 'swiper/react';
-import type { TProduct } from '../ProductCard';
 
+import { useState } from 'react';
+import type { Settings } from 'react-slick';
+
+import type { TProduct } from '../ProductCard';
 import Slider from './Slider';
 import ProductCard from '../ProductCard';
 
@@ -10,18 +12,40 @@ type Props = {
 };
 
 function ProductSlider({ products }: Props) {
-  console.log(products.length);
-  const options: SwiperProps = {};
+  const [currentSlideNumber, setCurrentSlideNumber] = useState(0);
+
+  const options: Settings = {
+    // autoplay: true,
+    // speed: 300,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    centerMode: true,
+    cssEase: 'linear',
+    className: 'center',
+    centerPadding: '3px',
+
+    arrows: false,
+    beforeChange: (_: number, nextSlide: number) =>
+      setCurrentSlideNumber(nextSlide),
+    responsive: [
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+
   return (
-    <Slider options={options}>
-      {products.length > 0 &&
-        products.map((product) => {
-          return (
-            <SwiperSlide key={product.id}>
-              <ProductCard {...product} />
-            </SwiperSlide>
-          );
-        })}
+    <Slider options={options} className="w-full">
+      {products.map((product, index) => {
+        const isActive = Boolean(currentSlideNumber === index);
+        return (
+          <ProductCard key={product.id} {...product} isActive={isActive} />
+        );
+      })}
     </Slider>
   );
 }
