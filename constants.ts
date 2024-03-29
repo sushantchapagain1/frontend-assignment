@@ -29,7 +29,3 @@ export const SIDE_NAV_LINKS = [
   { href: '/cart', icon: CartIcon },
   { href: '/list', icon: LockIcon },
 ] as const;
-
-export const BACKEND_URL =
-  process.env.NEXT_PUBLIC_BACKEND_URL ||
-  'https://frontend-assignment-kj9rwjlml-sushantchapagain1.vercel.app/';
