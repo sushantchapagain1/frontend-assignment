@@ -39,7 +39,7 @@ function ProductSlider({ products }: Props) {
   };
 
   return (
-    <Slider options={options} className="w-full">
+    <Slider options={options} className="w-full overflow-visible">
       {products.map((product, index) => {
         const isActive = Boolean(currentSlideNumber === index);
         return (

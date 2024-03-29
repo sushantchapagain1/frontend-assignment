@@ -17,7 +17,7 @@ function ProductCard({ source, name, price, alt, isActive, id }: TProduct) {
   const isInCart = checkCart(id);
 
   return (
-    <div className="flex flex-col items-center text-white">
+    <div className="flex flex-col items-center overflow-auto text-white">
       <Image
         src={source}
         alt={alt || 'plant image'}
@@ -35,16 +35,16 @@ function ProductCard({ source, name, price, alt, isActive, id }: TProduct) {
         </>
       )}
       {isActive && (
-        <div className="absolute -bottom-2 z-[999] flex w-fit items-center justify-between rounded-full bg-white/35 p-3 transition-all duration-300">
+        <div className="absolute -bottom-9 z-[999] flex w-fit items-center justify-between rounded-full bg-white/35 p-3 transition-all duration-300 md:w-[360px]">
           <div className="flex w-full flex-col">
-            <h3 className="text-lg font-medium">{name}</h3>
-            <p className="text-xl font-bold">
+            <h3 className="text-base font-medium md:text-lg">{name}</h3>
+            <p className="text-sm font-bold md:text-xl">
               <span>$</span>
               {price}
             </p>
           </div>
           <button
-            className="flex w-full items-center gap-1 rounded-full bg-white p-3 text-gray-700"
+            className="flex w-full items-center justify-center gap-1 rounded-full bg-white p-3 text-gray-700"
             onClick={
               isInCart
                 ? () => removeFromCart(id)
