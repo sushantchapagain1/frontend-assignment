@@ -31,4 +31,5 @@ export const SIDE_NAV_LINKS = [
 ] as const;
 
 export const BACKEND_URL =
-  process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8000';
+  process.env.NEXT_PUBLIC_BACKEND_URL ||
+  'https://frontend-assignment-kj9rwjlml-sushantchapagain1.vercel.app/';
