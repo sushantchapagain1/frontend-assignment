@@ -11,7 +11,7 @@ async function page() {
   const { products } = JSON.parse(file);
 
   return (
-    <MainWrapper className="!relative flex items-center justify-center pb-6">
+    <MainWrapper className="relative flex items-center justify-center">
       <Suspense
         fallback={
           <div className="flex gap-3">

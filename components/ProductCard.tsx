@@ -18,7 +18,7 @@ function ProductCard({ source, name, price, alt, isActive, id }: TProduct) {
   const isInCart = checkCart(id);
 
   return (
-    <div className="flex flex-col items-center text-white">
+    <div className="flex h-full flex-col items-center text-white">
       <Image
         src={source}
         alt={alt || 'plant image'}

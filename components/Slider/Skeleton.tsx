@@ -2,7 +2,7 @@ import React from 'react';
 
 function Skeleton() {
   return (
-    <div className="flex flex-col items-center justify-center gap-3">
+    <div className="flex flex-col items-center justify-between gap-3 first:hidden last:hidden md:first:flex lg:last:flex">
       <div
         role="status"
         className="flex h-56 w-full max-w-sm animate-pulse items-center justify-center rounded-lg bg-gray-300/50 "
@@ -19,7 +19,7 @@ function Skeleton() {
         </svg>
       </div>
       <div className="h-2.5 w-60 rounded-full bg-gray-200/50 "></div>
-      <div className=" h-2.5 w-40 rounded-full bg-gray-200/50 "></div>
+      <div className="h-2.5 w-40 rounded-full bg-gray-200/50 "></div>
     </div>
   );
 }

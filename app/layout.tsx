@@ -24,9 +24,9 @@ export default function RootLayout({
       <body className={inter.className}>
         <BackgroundImageWrapper source="/static/bg-images/bg-1.png">
           <CartProvider>
-            <div className="mx-auto my-0 flex h-full max-w-[1100px] flex-col items-center justify-between p-6 md:p-20">
+            <div className="mx-auto my-0 flex h-full max-w-[1200px] flex-col items-center justify-between p-6 lg:p-20">
               <UrlBar />
-              <div className="flex w-full flex-col items-center gap-6 md:mt-10 md:flex-row">
+              <div className="flex w-full flex-col items-center gap-6 md:mt-3 xl:flex-row">
                 <SideNav />
                 <main className="w-full">{children}</main>
               </div>

@@ -10,7 +10,7 @@ function SideNav() {
   const pathName = usePathname();
   return (
     <nav className="rounded-full border bg-white/60 text-gray-700 backdrop-blur-xl">
-      <ul className="flex items-center justify-between gap-4 md:flex-col md:p-2">
+      <ul className="flex items-center justify-between gap-4 md:p-2 xl:flex-col">
         {SIDE_NAV_LINKS.map((link) => {
           const isActive = pathName === link.href;
           const Icon = link.icon;
