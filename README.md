@@ -1,6 +1,6 @@
 ## Getting Started
 
-Simple plant ui app that shows the data from static json data.
+Simple plant ui app that shows the data in slider and your cart from static json data.
 
 Run the following command to install with your fav package manager
 
