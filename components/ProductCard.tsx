@@ -2,7 +2,6 @@ import Image from 'next/image';
 import { PlusIcon } from './icons';
 import { useCart } from '@/context/CartContext';
 import { cn } from '@/lib/utils';
-import { Suspense } from 'react';
 
 export type TProduct = {
   id: number;
@@ -40,7 +39,7 @@ function ProductCard({ source, name, price, alt, isActive, id }: TProduct) {
 
       <div
         className={cn(
-          'absolute -bottom-9 z-[999] w-fit translate-y-full transform items-center justify-between rounded-full bg-white/35 p-3 opacity-0 transition-opacity duration-300 md:w-[360px] lg:flex',
+          'absolute -bottom-12 !z-[999] w-fit translate-y-full items-center justify-between overflow-scroll rounded-full bg-white/35 p-3 opacity-0 transition-opacity duration-[1000ms] md:w-[360px] lg:flex',
           { 'translate-y-0 lg:opacity-100': isActive },
         )}
       >

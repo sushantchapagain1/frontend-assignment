@@ -3,9 +3,9 @@ import {
   CartIcon,
   FourSquareIcon,
   HomeIcon,
-  LockIcon,
   PlantBucketIcon,
   SquareDownIcon,
+  TuningSquare,
 } from '@/components/icons/index';
 
 export const HEADER_LINKS = [
@@ -27,5 +27,5 @@ export const SIDE_NAV_LINKS = [
   { href: '/', icon: HomeIcon },
   { href: '/plants', icon: PlantBucketIcon },
   { href: '/cart', icon: CartIcon },
-  { href: '/list', icon: LockIcon },
+  { href: '/tuning', icon: TuningSquare },
 ] as const;
