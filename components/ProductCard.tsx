@@ -39,7 +39,7 @@ function ProductCard({ source, name, price, alt, isActive, id }: TProduct) {
 
       <div
         className={cn(
-          'absolute -bottom-2 !z-50 w-fit translate-y-full items-center justify-between overflow-scroll rounded-full bg-white/35 p-3 opacity-0 transition-opacity duration-[1000ms] md:w-[360px] lg:flex',
+          'absolute -bottom-16 !z-[99] w-fit translate-y-full items-center justify-between rounded-full bg-white/35 p-3 opacity-0 transition-opacity duration-[1000ms] md:w-[360px] lg:flex',
           { 'translate-y-0 lg:opacity-100': isActive },
         )}
       >

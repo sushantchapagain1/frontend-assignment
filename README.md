@@ -5,13 +5,13 @@ Simple plant ui app that shows the data from static json data.
 Run the following command to install with your fav package manager
 
 ```bash
-npm run dev
+npm install
 # or
-yarn dev
+yarn
 # or
-pnpm dev
+pnpm install
 # or
-bun dev
+bun install
 ```
 
 and then run the following command to start the application.
